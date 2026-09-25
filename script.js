@@ -99,3 +99,61 @@ topButton.addEventListener("click", () => {
    FOOTER YEAR
 ========================= */
 document.getElementById("year").textContent = new Date().getFullYear();
+/* =========================
+   IMAGE SLIDESHOW
+========================= */
+const track = document.getElementById('sliderTrack');
+const slides = document.querySelectorAll('.slide');
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+
+if (track && slides.length > 0) {
+  let currentIndex = 0;
+  const slideCount = slides.length;
+  let autoSlideTimer;
+
+  // Function to move the slider
+  function updateSlider() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  // Next Slide Logic
+  function goToNextSlide() {
+    currentIndex = (currentIndex === slideCount - 1) ? 0 : currentIndex + 1;
+    updateSlider();
+  }
+
+  // Prev Slide Logic
+  function goToPrevSlide() {
+    currentIndex = (currentIndex === 0) ? slideCount - 1 : currentIndex - 1;
+    updateSlider();
+  }
+
+  // Event Listeners for arrows
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      goToNextSlide();
+      resetTimer(); // Reset auto-play so it doesn't immediately slide again
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      goToPrevSlide();
+      resetTimer();
+    });
+  }
+
+  // Auto-play interval (slides every 4 seconds)
+  function startAutoSlide() {
+    autoSlideTimer = setInterval(goToNextSlide, 4000);
+  }
+
+  function resetTimer() {
+    clearInterval(autoSlideTimer);
+    startAutoSlide();
+  }
+
+  // Initialize auto-play
+  startAutoSlide();
+}
