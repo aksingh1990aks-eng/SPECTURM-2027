@@ -95,7 +95,7 @@ a { text-decoration: none; color: inherit; }
 .orbit-two { width: 390px; height: 160px; right: -140px; bottom: 50px; transform: rotate(-20deg); }
 
 .quick-info { background: #fff; border-bottom: 1px solid #e6edf4; }
-.info-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.info-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
 .info-grid > div { padding: 22px 18px; border-right: 1px solid #e6edf4; }
 .info-grid > div:first-child { border-left: 1px solid #e6edf4; }
 .info-grid span { display: block; font-size: 9px; letter-spacing: 1.5px; color: #8491a3; font-weight: 800; }
