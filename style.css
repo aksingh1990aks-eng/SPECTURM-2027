@@ -124,13 +124,106 @@ a { text-decoration: none; color: inherit; }
 .outcome-list div { display: flex; gap: 12px; padding: 13px; border: 1px solid rgba(255,255,255,0.08); border-radius: 11px; background: rgba(255,255,255,0.04); font-size: 11px; color: #d9e4ef; align-items: center; }
 .outcome-list b { color: #8bd8da; }
 
-.tracks-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; margin-top: 30px; }
-.track { border: 1px solid #dfe8ef; background: #fff; border-radius: 14px; padding: 18px 19px; display: flex; gap: 14px; align-items: center; justify-content: space-between; transition: 0.2s; }
-.track:hover { border-color: #9ed5d7; transform: translateY(-3px); box-shadow: 0 10px 25px rgba(20,125,145,0.1); }
-.track-num { font-size: 10px; font-weight: 800; color: #147d91; background: #e9f7f7; border-radius: 7px; padding: 6px 7px; }
-.track h3 { font-size: 13px; line-height: 1.35; flex: 1; }
-.track-icon { color: #8bd8da; display: grid; place-items: center; }
+/* Replace the previous track styles with these updated Flexbox rules */
 
+.tracks-grid { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+  margin-top: 40px; 
+  align-items: stretch; 
+}
+
+/* Base card setup */
+.thematic-card { 
+  border-radius: 12px; 
+  padding: 25px; 
+  box-shadow: 0 10px 30px rgba(16,35,63,0.04); 
+  display: flex; 
+  flex-direction: column; 
+  height: 100%; 
+  box-sizing: border-box; 
+  
+  /* Required for the circulating border animation */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background: #fff;
+  border-top: 5px solid var(--track-color); /* Static top border */
+  
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-top-color 0.25s ease, background 0.25s ease;
+}
+
+/* Ensure all text/content stays strictly above the animated background */
+.thematic-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* 1. The circulating gradient (Hidden by default) */
+.thematic-card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: conic-gradient(from 0deg, transparent 75%, var(--track-color) 100%);
+  transform: translate(-50%, -50%) rotate(0deg);
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* 2. The white inner mask (Hidden by default) */
+.thematic-card::after {
+  content: "";
+  position: absolute;
+  /* Mathematically calculated to leave an exact 3px gap on all sides for the border to shine through */
+  top: -2px; 
+  right: 3px; 
+  bottom: 3px; 
+  left: 3px;
+  background: #fff;
+  border-radius: 9px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* Hover Actions */
+.thematic-card:hover { 
+  transform: translateY(-5px); 
+  box-shadow: 0 15px 40px rgba(16,35,63,0.08);
+  border-top-color: transparent; /* Hide static border */
+  background: transparent; /* Reveal background mechanics */
+}
+
+/* Trigger opacity and spinning animation on hover */
+.thematic-card:hover::before, 
+.thematic-card:hover::after {
+  opacity: 1;
+}
+
+.thematic-card:hover::before {
+  animation: circulate 4.5s linear infinite;
+}
+
+/* Keyframes for the circulation effect */
+@keyframes circulate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Rest of the existing CSS (Keep these as they were) */
+.thematic-header { display: flex; align-items: center; gap: 15px; margin-bottom: 18px; }
+.thematic-id { width: 50px; height: 50px; border-radius: 50%; color: #fff; font-family: "Space Grotesk", sans-serif; font-size: 22px; font-weight: 700; display: grid; place-items: center; flex-shrink: 0; }
+.thematic-title-group h3 { font-size: 18px; font-weight: 800; line-height: 1.2; letter-spacing: -0.2px; }
+.thematic-title-group h4 { font-size: 13px; color: #526177; font-weight: 500; margin-top: 4px; line-height: 1.3; }
+.thematic-desc { font-size: 12px; font-weight: 600; line-height: 1.5; margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #edf2f7; }
+.thematic-list { list-style: none; padding: 0; margin: 0; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 4px; }
+.thematic-list li { position: relative; padding-left: 14px; font-size: 12px; color: #3b4b61; line-height: 1.4; }
+.thematic-list li::before { content: "•"; position: absolute; left: 0; top: 0; color: #879ab0; font-size: 14px; }
 /* =========================
    COMMITTEE TABS LAYOUT
 ========================= */

@@ -2,32 +2,114 @@
    TECHNICAL TRACKS (SPECTRAM 2027)
 ========================= */
 const tracks = [
-  "Microwave Engineering and RF Systems",
-  "Antenna Design and Smart Antennas",
-  "Electromagnetic Theory and Computational Electromagnetics",
-  "Wave Propagation and Channel Modeling",
-  "Millimeter-Wave and Terahertz Technologies",
-  "Microwave Circuits and Devices",
-  "5G/6G Wireless Communication Systems",
-  "Satellite and Space Communications",
-  "Radar Systems and Remote Sensing",
-  "Internet of Things (IoT) and Wireless Sensor Networks",
-  "AI and Machine Learning Applications in RF and Microwave",
-  "Signal Processing Techniques"
+  {
+    id: "01",
+    title: "SIGNAL PROCESSING",
+    subtitle: "Transforming Signals into Intelligence",
+    description: "Enabling Seamless Intelligence through 5G/6G, Integrated Networks, and Ubiquitous Wireless Connectivity",
+    color: "#08656a", 
+    topics: [
+      "Fundamentals of Signal Processing",
+      "AI/ML in Signal Processing",
+      "Digital Image Processing",
+      "Image, Video and Computer Vision",
+      "Audio and Speech Processing",
+      "Array, Multichannel and Sensor Signal Processing",
+      "Signal Processing for 5G/6G Communications",
+      "Radar, Sonar and Remote Sensing",
+      "Biomedical Signal and Image Processing",
+      "Sparse, Compressive and High-Dimensional Processing",
+      "Multimedia and Multimodal Signal Processing",
+      "IoT, Edge Intelligence and Cyber-Physical Systems",
+      "Signal Processing Algorithms, Architectures and VLSI",
+      "Security, Forensics and Information Processing",
+      "Computational Imaging and Inverse Problems",
+      "Emerging and Interdisciplinary Applications",
+      "Statistical, Adaptive and Intelligent Signal Processing",
+      "Radar, Biomedical and Remote-Sensing Signal Processing"
+    ]
+  },
+  {
+    id: "02",
+    title: "COMMUNICATION",
+    subtitle: "Communication for a Connected World",
+    description: "Transforming Electromagnetic Apertures through Intelligent Surfaces, Beamforming, and Advanced Array Architectures",
+    color: "#0b5894", 
+    topics: [
+      "Communication Theory and Information Theory",
+      "Wireless Communication Systems and Networks",
+      "6G and Next-Generation Wireless Technologies",
+      "MIMO, Massive MIMO and Advanced Beamforming",
+      "mmWave, Sub-THz and Terahertz Communications",
+      "Reconfigurable Intelligent Surfaces and Smart Radio Environments",
+      "AI/ML for Wireless Communications and Networking",
+      "IoT, Industrial IoT and Machine-Type Communications",
+      "Wireless Networks, Edge Computing and Network Intelligence",
+      "Satellite, Non-Terrestrial and Aerial Communications",
+      "Integrated Sensing, Localization and Communications",
+      "Optical, Free-Space and Fiber-Optic Communications",
+      "Vehicular, V2X and Autonomous Communications",
+      "Communication Security, Privacy and Reliability",
+      "Emerging Communication Technologies and Applications"
+    ]
+  },
+  {
+    id: "03",
+    title: "RF & MICROWAVE",
+    subtitle: "Advancing RF and Microwave Frontiers",
+    description: "Harnessing the Spectrum through RF Innovation, Microwave Engineering, and Intelligent Electromagnetics",
+    color: "#b91c3a", 
+    topics: [
+      "Passive RF Circuits and Components",
+      "Active RF/Microwave Circuits",
+      "RF Devices and Components",
+      "Millimeter-Wave Circuits",
+      "Microwave and mmWave Imaging",
+      "Wireless Power Transmission",
+      "Electromagnetic Interference and Compatibility",
+      "Optimization of Passive and Active RF Circuits",
+      "Microwave and mmWave Antennas",
+      "Antenna Theory",
+      "Antenna Array Design",
+      "Satellite Antennas",
+      "Array Antennas",
+      "Metamaterials and Metasurfaces",
+      "Measurement and Applications",
+      "Antennas on handheld and ground terminals",
+      "Antenna Measurements & RCS",
+      "Computational Electromagnetics",
+      "Reflector and Reflectarray Antenna",
+      "Wearable Circuits and Antennas",
+      "Radar Circuits and Antennas",
+      "Microwave and mmWave Absorbers",
+      "THz Absorbers and Sensors",
+      "AI-Assisted RF Circuits and Antennas",
+      "Emerging RF and Microwave Circuits",
+      "Modern Antennas & Antenna Array",
+      "AI/ML in RF and Microwave"
+    ]
+  }
 ];
 
 const tracksGrid = document.getElementById("tracksGrid");
+tracksGrid.innerHTML = ""; 
 
-tracks.forEach((track, index) => {
-  const svgIcon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>`;
+tracks.forEach((track) => {
+  const topicsHtml = track.topics.map(topic => `<li>${topic}</li>`).join("");
   
   tracksGrid.innerHTML += `
-    <div class="track">
-      <span class="track-num">
-        ${String(index + 1).padStart(2, "0")}
-      </span>
-      <h3>${track}</h3>
-      <div class="track-icon">${svgIcon}</div>
+    <div class="thematic-card" style="--track-color: ${track.color}">
+      <div class="thematic-header">
+        <div class="thematic-id" style="background: ${track.color}">${track.id}</div>
+        <div class="thematic-title-group">
+          <h3 style="color: ${track.color}">${track.title}</h3>
+          <h4>${track.subtitle}</h4>
+        </div>
+      </div>
+      <p class="thematic-desc" style="color: ${track.color}">${track.description}</p>
+      <ul class="thematic-list">
+        ${topicsHtml}
+      </ul>
     </div>
   `;
 });
