@@ -72,13 +72,35 @@ a { text-decoration: none; color: inherit; }
 .primary { background: #147d91; color: #fff; box-shadow: 0 10px 24px rgba(20,125,145,0.2); }
 .secondary { border: 1px solid #ccd9e4; background: #fff; color: #253852; }
 
-.host-line { border-left: 3px solid #b9e2e2; padding-left: 15px; display: grid; gap: 5px; font-size: 11px; color: #637186; }
+.host-line { border-left: 3px solid #b9e2e2; padding-left: 15px; display: grid; gap: 5px; font-size: 13px; color: #809cc7; }
 .host-line strong { color: #31425a; }
 
 .hero-card { min-height: 420px; border-radius: 28px; background: #10233f; position: relative; overflow: hidden; box-shadow: 0 25px 55px rgba(16,35,63,0.15); }
 .hero-card:before { content: ""; position: absolute; width: 260px; height: 260px; border-radius: 50%; background: #147d91; right: -100px; top: -90px; opacity: 0.65; }
 .hero-card-inner { position: relative; margin: 35px; border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; height: 350px; padding: 45px; color: #fff; background: rgba(255,255,255,0.03); }
-
+.hero-text-box {
+  background: #ffffff;
+  border: 1px solid #e1eaf0;
+  border-left: 4px solid #147d91;
+  padding: 22px 25px;
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: 0 8px 25px rgba(16, 35, 63, 0.04);
+  max-width: 760px;
+}
+.hero-text-box .box-title {
+  color: #10233f;
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-family: "Space Grotesk", sans-serif;
+}
+.hero-text-box p {
+  font-size: 14px;
+  color: #5e6d82;
+  margin: 0;
+  line-height: 1.6;
+}
 .big-number { font-size: 12px; letter-spacing: 2px; color: #9ddfe0; }
 .card-label { font-family: "Space Grotesk", sans-serif; font-size: 50px; font-weight: 500; line-height: 1; margin-top: 30px; }
 .month { font-size: 16px; letter-spacing: 3px; color: #a9dfe2; }
