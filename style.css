@@ -101,6 +101,7 @@ a { text-decoration: none; color: inherit; }
   margin: 0;
   line-height: 1.6;
 }
+
 .big-number { font-size: 12px; letter-spacing: 2px; color: #9ddfe0; }
 .card-label { font-family: "Space Grotesk", sans-serif; font-size: 50px; font-weight: 500; line-height: 1; margin-top: 30px; }
 .month { font-size: 16px; letter-spacing: 3px; color: #a9dfe2; }
@@ -517,4 +518,35 @@ footer { background: #0d1e35; color: #cbd7e3; padding-top: 55px; }
   .big-number { font-size: 60px; }
   .two-col { gap: 25px; }
   .section-heading h2 { font-size: 31px; }
+}
+/* =========================
+   ANIMATED HERO TITLE
+========================= */
+.animated-title { 
+  font-family: "Space Grotesk", sans-serif; 
+  font-size: clamp(48px, 8vw, 84px); /* Slightly larger for more impact */
+  line-height: 0.95; 
+  letter-spacing: -3px; 
+  margin: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+}
+
+/* Shifting Gradient Effect for "SPECTRAM" */
+.text-gradient {
+  background: linear-gradient(90deg, #10233f, #147d91, #8bd8da, #147d91, #10233f);
+  background-size: 300% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradientShine 3s linear infinite;
+}
+
+/* Keyframes */
+@keyframes gradientShine {
+  to {
+    background-position: 300% center;
+  }
 }
