@@ -3,24 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SPECTRAM 2027 | IEEE International Conference</title>
+  <meta name="theme-color" content="#001638">
+  <meta name="description" content="SPECTRAM 2027 — IEEE International Conference on signal processing, electromagnetics, communication technologies, RF antennas and microwaves.">
+  <title>SPECTRAM 2027 | Home</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-home">
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <span>IEEE MTT-S Student Branch Chapter (SBC2530573)</span>
-  <span>IEEE Madhya Pradesh Section</span>
+
+<!-- SINGLE CONFERENCE INFO BAR -->
+<div class="topbar" role="contentinfo" aria-label="Conference contact information">
+  <div class="topbar-inner">
+    <a class="topbar-location" href="travel.html" aria-label="Conference venue">
+      <span class="topbar-icon" aria-hidden="true">⌖</span>
+      <span>Guru Ghasidas Vishwavidyalaya, Bilaspur, Chhattisgarh</span>
+    </a>
+    <span class="topbar-date"><span class="topbar-icon" aria-hidden="true">◷</span> 21–23 August 2027</span>
+    <a class="topbar-email" href="mailto:ieeespectramggv@gmail.com">
+      <span class="topbar-icon" aria-hidden="true">✉</span>
+      <span>ieeespectramggv@gmail.com</span>
+    </a>
+  </div>
 </div>
 
 <!-- NAVBAR -->
 <header class="site-header">
   <div class="container nav-wrap">
-    <a href="#home" class="logo brand">
+    <a href="index.html" class="logo brand">
       <img src="SPECTRAM 1.jpg.jpeg" alt="SPECTRAM 2027 Logo" class="brand-img">
     </a>
 
@@ -28,20 +40,34 @@
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
     </button>
 
-  <nav id="nav" class="nav">
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#scope">Scope</a>
-  <a href="#tracks">Tracks</a>
-  <a href="#guidelines">Guidelines</a>
-  <a href="#committees">Committees</a>
-  <a href="#registration">Registration</a>
-  <a href="#contact">Contact</a>
+  <nav id="nav" class="nav" aria-label="Main navigation">
+<a href="index.html" class="active" aria-current="page">Home</a>
+<a href="about.html">About</a>
+<a href="tracks.html">Tracks</a>
+<div class="nav-dropdown">
+  <button class="nav-drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Authors <span class="drop-chevron" aria-hidden="true">⌄</span></button>
+  <div class="nav-dropdown-menu" aria-label="Author resources">
+<a href="authors.html">Call for Papers</a>
+<a href="guidelines.html">Paper Submission Guidelines</a>
+<a href="crc-copyright.html">CRC & Copyright Submission</a>
+<a href="poster-presentation.html">Poster Presentation</a>
+<a href="oral-presentation.html">Oral Presentation</a>
+</div></div>
+<a href="committees.html">Committees</a>
+<div class="nav-dropdown">
+  <button class="nav-drop-toggle" type="button" aria-expanded="false" aria-haspopup="true">Travel <span class="drop-chevron" aria-hidden="true">⌄</span></button>
+  <div class="nav-dropdown-menu" aria-label="Travel information">
+<a href="travel.html">Travel Overview</a>
+<a href="accommodation.html">Accommodation</a>
+<a href="attractions.html">Nearby Attractions</a>
+</div></div>
+<a href="registration.html">Registration</a>
+<a href="sponsors.html">Sponsors</a>
+<a href="contact.html">Contact</a>
 </nav>
-    <a href="#contact" class="nav-cta">Event Details</a>
   </div>
 </header>
-
+<main>
 <!-- ANNOUNCEMENT TICKER -->
 <div class="ticker">
   <div class="ticker-track">
@@ -50,8 +76,14 @@
   
 </div>
 
-<!-- HERO -->
 <section class="hero" id="home">
+  <div class="hero-live-wallpaper" aria-hidden="true">
+    <div class="hero-wallpaper-scene hero-wallpaper-circuit"></div>
+    <div class="hero-wallpaper-scene hero-wallpaper-network"></div>
+    <div class="hero-wallpaper-glow"></div>
+    <div class="hero-wallpaper-grid"></div>
+    <canvas class="hero-signal-canvas" id="hero-signal-canvas" aria-hidden="true"></canvas>
+  </div>
   <div class="container hero-grid">
     <div class="hero-content">
       <div class="eyebrow">
@@ -65,7 +97,7 @@
       </h1>
 
       <h2>
-        2027 International Conference on Signal Processing, Electromagnetics, Communication Technologies , RF Antenna and Microwaves
+        2027 International Conference on Signal Processing, Electromagnetics, Communication Technologies, RF Antennas and Microwaves
       </h2>
 
       <div class="hero-text-box">
@@ -75,9 +107,14 @@
         </p>
       </div>
 
+      <div class="hero-meta-row" aria-label="Conference date and location">
+        <span><b aria-hidden="true">◷</b> 21–23 August 2027</span>
+        <span><b aria-hidden="true">⌖</b> Guru Ghasidas Vishwavidyalaya, Bilaspur, India</span>
+      </div>
+
       <div class="hero-actions">
-        <a href="#about" class="btn primary">Explore Conference</a>
-        <a href="#tracks" class="btn secondary flex-btn">
+        <a href="authors.html" class="btn primary">Call for Papers</a>
+        <a href="tracks.html" class="btn secondary flex-btn">
           Technical Tracks 
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -88,603 +125,148 @@
       </div>
     </div>
 
-   <!-- DATE CARD -->
-    <div class="hero-card">
-      <div class="orbit orbit-one"></div>
-      <div class="orbit orbit-two"></div>
-      
-      <div class="hero-card-inner" style="display: flex; flex-direction: column; justify-content: center;">
-        <span class="card-label" style="font-size: clamp(28px, 4vw, 40px); margin-top: 0;">IMPORTANT DATES</span>
-        
-        <div class="divider"></div>
 
-        <ul style="color: #d2deea; font-size: 13px; line-height: 1.8; padding-left: 20px; margin: 0;">
-          <li><strong style="color: #8bd8da;">Start of paper Submission:</strong> November 02, 2027</li>
-          <li><strong style="color: #8bd8da;">Paper Submission Deadline:</strong> February 28, 2027</li>
-          <li><strong style="color: #8bd8da;">Notification of Acceptance:</strong> April 15, 2027</li>
-          <li><strong style="color: #8bd8da;">Camera ready Submission:</strong> May 15, 2027</li>
-          <li><strong style="color: #8bd8da;">Conference Date:</strong> August 21-23, 2027</li>
-        </ul>
-        
-        
-      </div>
+
+   <!-- The hero focuses on the conference introduction; important dates appear in their own section below. -->
+  </div>
+</section>
+
+<section class="section announcements-section" id="announcements">
+  <div class="container">
+    <div class="announcements-heading">
+      <div><p class="eyebrow"><span></span> NEWS & UPDATES</p><h2>Latest <span>Announcements</span></h2></div>
+      <span class="status-pill"><i></i> Website updates in progress</span>
+    </div>
+    <div class="announcement-list">
+      <article class="announcement-item"><span class="announcement-tag">AUTHOR UPDATE</span><div><h3>Paper submission portal</h3><p>The official SPECTRAM 2027 submission link will be published here once available.</p></div><span class="under-construction">Under Construction</span></article>
+      <article class="announcement-item"><span class="announcement-tag">RESOURCES</span><div><h3>Conference brochure & call-for-papers poster</h3><p>Official downloadable conference resources will be added when released.</p></div><span class="under-construction">Under Construction</span></article>
+      <article class="announcement-item"><span class="announcement-tag">ATTENDEES</span><div><h3>Venue, travel & accommodation</h3><p>Visitor information for Guru Ghasidas Vishwavidyalaya, Bilaspur will be published here.</p></div><span class="under-construction">Under Construction</span></article>
+    </div>
+  </div>
+</section>
+
+<section class="quick-info conference-facts">
+  <div class="container facts-grid">
+    <div class="fact-item"><span class="fact-label">CONFERENCE DATES</span><strong>21–23 August 2027</strong><span class="fact-note">SPECTRAM’27</span></div>
+    <div class="fact-item"><span class="fact-label">VENUE</span><strong>GGV, Bilaspur</strong><span class="fact-note">Chhattisgarh, India</span></div>
+    <div class="fact-item"><span class="fact-label">TECHNICAL SPONSOR</span><strong>IEEE Madhya Pradesh Section</strong><span class="fact-note">IEEE conference community</span></div>
+    <div class="fact-item"><span class="fact-label">HOST INSTITUTION</span><strong>Guru Ghasidas Vishwavidyalaya</strong><span class="fact-note">Department of Electronics and Communication Engineering</span></div>
+  </div>
+  <div class="co-sponsor-line">Co-sponsored by IEEE MTT-S Student Branch Chapter, SBC2530573</div>
+</section>
+
+
+
+<section class="section about-snapshot" id="conference-overview">
+  <div class="container overview-grid">
+    <div class="overview-visual" aria-label="SPECTRAM conference visual identity"><div class="visual-grid"></div><div class="visual-orbit orbit-a"></div><div class="visual-orbit orbit-b"></div><div class="overview-wordmark" aria-label="SPECTRAM">SPECTRAM</div><div class="visual-coordinate">SPECTRAM / 2027</div></div>
+    <div class="overview-copy">
+      <p class="eyebrow"><span></span> DISCOVER SPECTRAM’27</p>
+      <h2>A forum for ideas across the <span>electromagnetic spectrum.</span></h2>
+      <p>SPECTRAM 2027 brings together researchers, academicians, industry professionals, scientists and students working in signal processing, electromagnetics, communication technologies, RF, antennas and microwave engineering.</p>
+      <p>The conference aims to support technical exchange, research presentation and collaboration across established and emerging technologies.</p>
+      <div class="overview-tags"><span>Signal Processing</span><span>Communication</span><span>RF & Microwave</span></div>
+      <a href="about.html" class="text-link overview-link">Discover the conference <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section host-destination-section" id="host-and-destination">
+  <div class="container host-destination-grid">
+    <article class="destination-panel host-panel">
+      <div class="panel-kicker">HOST INSTITUTION</div>
+      <div class="panel-index">01 / SPECTRAM’27</div>
+      <h2>Guru Ghasidas <span>Vishwavidyalaya</span></h2>
+      <p>SPECTRAM 2027 is hosted at Guru Ghasidas Vishwavidyalaya (GGV), Bilaspur, Chhattisgarh, India, with the IEEE MTT-S Student Branch Chapter and IEEE Madhya Pradesh Section represented in the conference information.</p>
+      <a class="text-link" href="about.html">Explore the conference ↗</a>
+      <div class="panel-graphic panel-graphic-campus" aria-hidden="true"><i></i><i></i><i></i></div>
+    </article>
+    <article class="destination-panel city-panel">
+      <div class="panel-kicker">DESTINATION CITY</div>
+      <div class="panel-index">02 / BILASPUR, INDIA</div>
+      <h2>Discover <span>Bilaspur</span></h2>
+      <p>Plan your visit to Bilaspur, Chhattisgarh. Travel guidance, accommodation details and nearby attractions will be added as official event information becomes available.</p>
+      <a class="text-link" href="travel.html">Travel information ↗</a>
+      <div class="panel-graphic panel-graphic-city" aria-hidden="true"><i></i><i></i><i></i></div>
+      <span class="under-construction">Visitor details under construction</span>
+    </article>
+  </div>
+</section>
+
+<section class="section timeline-section" id="important-dates">
+  <div class="container">
+    <div class="timeline-heading"><div><p class="eyebrow"><span></span> PLAN AHEAD</p><h2>Important <span>Dates</span></h2><p>Key dates currently listed for SPECTRAM 2027.</p></div><a class="text-link" href="guidelines.html">Author guidelines ↗</a></div>
+    <div class="timeline-grid">
+      <article class="date-card"><span class="date-step">01</span><span class="date-label">PAPER SUBMISSION DEADLINE</span><strong class="date-value">28 Feb <small>2027</small></strong><p>Deadline currently listed on the SPECTRAM website.</p></article>
+      <article class="date-card"><span class="date-step">02</span><span class="date-label">ACCEPTANCE NOTIFICATION</span><strong class="date-value">15 Apr <small>2027</small></strong><p>Notification date currently listed on the SPECTRAM website.</p></article>
+      <article class="date-card"><span class="date-step">03</span><span class="date-label">CAMERA-READY SUBMISSION</span><strong class="date-value">15 May <small>2027</small></strong><p>Final manuscript date currently listed on the SPECTRAM website.</p></article>
+      <article class="date-card date-card-featured"><span class="date-step">04</span><span class="date-label">CONFERENCE DATES</span><strong class="date-value">21–23 <small>Aug 2027</small></strong><p>Guru Ghasidas Vishwavidyalaya, Bilaspur, Chhattisgarh.</p></article>
+    </div>
+    <p class="date-disclaimer">Dates are shown from the current SPECTRAM project content. Please check official announcements for confirmed updates.</p>
+  </div>
+</section>
+
+<section class="section tracks-preview" id="call-for-papers">
+  <div class="container">
+    <div class="timeline-heading"><div><p class="eyebrow"><span></span> CALL FOR PAPERS</p><h2>Explore the <span>Technical Tracks</span></h2><p>Research areas currently listed for SPECTRAM 2027.</p></div><a class="text-link" href="tracks.html">All topics & details ↗</a></div>
+    <div class="track-preview-grid">
+      <a class="track-preview-card track-preview-one" href="tracks.html"><span class="track-artwork"><img src="assets/digital-work.jpg" alt="Abstract signal processing and digital data visualization" loading="lazy"><span class="artwork-index">01 / SIGNALS</span></span><span class="preview-number">TRACK 01</span><span class="preview-symbol" aria-hidden="true">∿</span><h3>Signal Processing</h3><p>Signal intelligence, image and video processing, AI/ML, sensing and computational methods.</p><span class="preview-link">Explore topics ↗</span></a>
+      <a class="track-preview-card track-preview-two" href="tracks.html"><span class="track-artwork"><img src="assets/global-network.jpg" alt="Global wireless communication network visualization" loading="lazy"><span class="artwork-index">02 / CONNECTIVITY</span></span><span class="preview-number">TRACK 02</span><span class="preview-symbol" aria-hidden="true">⌁</span><h3>Communication</h3><p>Wireless systems, 5G/6G, advanced networks, intelligent surfaces and emerging connectivity.</p><span class="preview-link">Explore topics ↗</span></a>
+      <a class="track-preview-card track-preview-three" href="tracks.html"><span class="track-artwork"><img src="assets/circuit-board.jpg" alt="Close-up of RF electronics and circuit traces" loading="lazy"><span class="artwork-index">03 / RF & MICROWAVE</span></span><span class="preview-number">TRACK 03</span><span class="preview-symbol" aria-hidden="true">⌇</span><h3>RF & Microwave</h3><p>RF circuits, antenna systems, microwave engineering, metasurfaces, sensors and electromagnetics.</p><span class="preview-link">Explore topics ↗</span></a>
+    </div>
+    <div class="tracks-submission-cta">
+      <div><strong>Preparing a paper for SPECTRAM 2027?</strong><p>Review the formatting requirements and submission process before submitting your research.</p></div>
+      <a href="guidelines.html" class="tracks-guidelines-link">Paper Submission Guidelines <span aria-hidden="true">↗</span></a>
     </div>
   </div>
 </section>
 
 
-<!-- QUICK INFORMATION -->
-<section class="quick-info" style="padding: 40px 0; background: #fff; border-bottom: 1px solid #e6edf4; text-align: center; font-family: 'Inter', sans-serif; line-height: 1.3;">
+
+<section class="section spectram-gallery-section" aria-labelledby="spectram-gallery-title">
   <div class="container">
-    <h2 style="font-size: clamp(22px, 3vw, 34px); font-weight: 500; color: #2c3e50; margin: 0 0 8px 0; letter-spacing: -0.5px;">
-      Technically Sponsored by IEEE Madhya Pradesh Section
-    </h2>
-    <h3 style="font-size: clamp(16px, 2vw, 22px); font-weight: 380; color: #34495e; margin: 0 0 8px 0;">
-      Co-Sponsored by IEEE MTT-S Student Branch Chapter, Guru Ghasidas Vishwavidyalaya, Bilaspur, C.G. India
-    </h3>
-    <p style="font-size: clamp(15px, 1.8vw, 20px); font-weight: 380; color: #34495e; margin: 0 0 12px 0;">
-      Hosted by - Department of Electronics and Communication Engineering, GGV, Bilaspur, C.G. India
-    </p>
-    <p style="font-size: clamp(14px, 1.5vw, 16px); color: #5e6d82; margin: 0;">
-      Welcome to SPECTRAM 2027
-    </p>
+    <div class="gallery-heading"><div><p class="eyebrow"><span></span> A GLIMPSE INTO OUR WORLD</p><h2 id="spectram-gallery-title">Ideas in <span>Motion</span></h2><p>Explore the technology, research and connections that inspire SPECTRAM.</p></div><div class="gallery-controls"><button type="button" class="gallery-control" id="gallery-prev" aria-label="Previous image">←</button><button type="button" class="gallery-control" id="gallery-next" aria-label="Next image">→</button></div></div>
+    <div class="spectram-gallery" id="spectram-gallery" aria-roledescription="carousel" aria-label="SPECTRAM technology image slideshow"><div class="gallery-track" id="gallery-track">
+      <figure class="gallery-slide is-active"><img src="assets/circuit-board.jpg" alt="Close-up of an electronic circuit board" loading="lazy"><figcaption><span>01 / ELECTRONICS</span><strong>Engineering at the smallest scale</strong></figcaption></figure>
+      <figure class="gallery-slide"><img src="assets/global-network.jpg" alt="Abstract global communications network" loading="lazy"><figcaption><span>02 / CONNECTIVITY</span><strong>A world connected by signals</strong></figcaption></figure>
+      <figure class="gallery-slide"><img src="assets/university-campus.jpg" alt="University campus architecture" loading="lazy"><figcaption><span>03 / ACADEMIA</span><strong>Where ideas and people meet</strong></figcaption></figure>
+      <figure class="gallery-slide"><img src="assets/night-sky.jpg" alt="Night sky and distant stars" loading="lazy"><figcaption><span>04 / EXPLORATION</span><strong>Looking beyond the visible</strong></figcaption></figure>
+      <figure class="gallery-slide"><img src="assets/digital-work.jpg" alt="Digital technology and collaborative work" loading="lazy"><figcaption><span>05 / INNOVATION</span><strong>Turning research into possibility</strong></figcaption></figure>
+      <figure class="gallery-slide"><img src="assets/research-team.jpg" alt="Researchers collaborating around a computer" loading="lazy"><figcaption><span>06 / COLLABORATION</span><strong>Progress is built together</strong></figcaption></figure>
+      <figure class="gallery-slide"><img src="assets/satellite-earth.jpg" alt="Earth viewed from space" loading="lazy"><figcaption><span>07 / SPACE &amp; SIGNALS</span><strong>Signals across vast distances</strong></figcaption></figure>
+      <figure class="gallery-slide"><img src="assets/conference-tech.jpg" alt="Digital tools and technology for knowledge sharing" loading="lazy"><figcaption><span>08 / THE CONFERENCE</span><strong>Ideas that shape what comes next</strong></figcaption></figure>
+    </div></div><div class="gallery-footer"><div class="gallery-dots" id="gallery-dots" aria-label="Choose slideshow image"></div><span class="gallery-counter" id="gallery-counter" aria-live="polite">01 / 08</span></div>
   </div>
 </section>
-<!-- SLIDESHOW -->
-<section class="section soft" id="gallery" style="padding: 40px 0;">
+</main>
+<section class="section sponsors-section" id="sponsors" aria-labelledby="sponsors-title">
   <div class="container">
-    <div class="slider-container">
-      <div class="slider-track" id="sliderTrack">
-        <!-- Replace the src with your actual image paths -->
-        <div class="slide"><img src="https://via.placeholder.com/1000x450/10233f/ffffff?text=Image+1" alt="Event Image 1"></div>
-        <div class="slide"><img src="https://via.placeholder.com/147d91/10233f/ffffff?text=Image+2" alt="Event Image 2"></div>
-        <div class="slide"><img src="https://via.placeholder.com/1000x450/2ca9b7/ffffff?text=Image+3" alt="Event Image 3"></div>
-        <div class="slide"><img src="https://via.placeholder.com/1000x450/10233f/ffffff?text=Image+4" alt="Event Image 4"></div>
-        <div class="slide"><img src="https://via.placeholder.com/147d91/10233f/ffffff?text=Image+5" alt="Event Image 5"></div>
-        <div class="slide"><img src="https://via.placeholder.com/1000x450/2ca9b7/ffffff?text=Image+6" alt="Event Image 6"></div>
-        <div class="slide"><img src="https://via.placeholder.com/1000x450/10233f/ffffff?text=Image+7" alt="Event Image 7"></div>
-      </div>
-      
-      <!-- Navigation Arrows -->
-      <button class="slider-btn prev" id="prevBtn" aria-label="Previous Slide">&#10094;</button>
-      <button class="slider-btn next" id="nextBtn" aria-label="Next Slide">&#10095;</button>
-    </div>
-  </div>
-</section>
-<!-- ABOUT -->
-<section class="section" id="about">
-  <div class="container two-col">
-    <div class="section-heading">
-      <div class="eyebrow">01 / ABOUT</div>
-      <h2>
-        Connecting ideas across 
-        <span>RF & wireless technology.</span>
-      </h2>
-    </div>
-
-    <div class="content-card">
-      <p>
-        The conference aims to bring together researchers, academicians, industry professionals, scientists, and students working in the fields of microwave engineering, antenna design, electromagnetic wave propagation, wireless communications, RF systems, and emerging signal processing technologies.
-      </p>
-      <p>
-        The conference will serve as a platform for presenting cutting-edge research, exchanging technical knowledge, fostering collaborations, and discussing future trends in antenna and propagation technologies.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- OBJECTIVES -->
-<section class="section soft" id="scope">
-  <div class="container">
-    <div class="section-heading centered">
-      <div class="eyebrow">02 / CONFERENCE FOCUS</div>
-      <h2>Objectives & Submission Guidelines</h2>
-      <p>
-        Research presentation, collaboration, IEEE professional activities and emerging technology areas.
-      </p>
-    </div>
-
-    <div class="feature-grid">
-      <div class="feature">
-        <div class="icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/></svg>
-        </div>
-        <h3>Research Forum</h3>
-        <p>To provide an international forum for presenting innovative research in microwaves, antennas, wireless and Signal Processing.</p>
-      </div>
-
-      <div class="feature">
-        <div class="icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3>Collaboration</h3>
-        <p>To facilitate collaboration between academia, research laboratories, and industry.</p>
-      </div>
-
-      <div class="feature">
-        <div class="icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <h3>IEEE Activities</h3>
-        <p>To promote IEEE professional activities and membership.</p>
-      </div>
-
-      <div class="feature">
-        <div class="icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
-        <h3>Emerging Technologies</h3>
-        <p>To explore the next generation of signal processing, wireless communication, antenna, microwave, and RF technologies</p>
-      </div>
-    </div>
-
-  <!-- Submission Guidelines -->
-    <div class="outcomes">
-      <div class="outcome-head">
-        <div class="eyebrow">Submission Guidelines</div>
-        <h3>The following submission guidelines apply</h3>
-      </div>
-      <div class="outcome-list" style="grid-template-columns: 1fr;">
-        <div>
-          <b>01</b> Authors are invited to submit original, unpublished, and high-quality research papers presenting significant theoretical, methodological, experimental, or application-oriented contributions.
-        </div>
-        <div>
-          <b>02</b> All accepted, registered, and presented papers that comply with IEEE’s required quality, technical, and formatting standards will be submitted to IEEE for consideration for inclusion in the IEEE Xplore® Digital Library.
-        </div>
-        <div>
-          <b>03</b> At least one author must register and present each accepted paper at the conference for the paper to be considered for inclusion in the conference proceedings and submission to IEEE Xplore, subject to applicable IEEE policies and requirements.
-        </div>
-      </div>
-    </div>
-</section>
-
-<!-- TECHNICAL TRACKS -->
-<section class="section" id="tracks">
-  <div class="container">
-    <div class="section-heading">
-      <div class="eyebrow">03 / TECHNICAL PROGRAM</div>
-      <h2>
-        The Three Thematic <span>Tracks</span>
-      </h2>
-      <p>Core research areas spanning the spectrum for SPECTRAM 2027.</p>
-    </div>
-    <div class="tracks-grid" id="tracksGrid"></div>
-  </div>
-</section>
-
-
-
-<!-- PAPER SUBMISSION GUIDELINES -->
-<section class="section guidelines-section" id="guidelines">
-  <div class="container">
-    <div class="section-heading centered">
-      <div class="eyebrow">04 / SUBMISSION DETAILS</div>
-      <h2>Paper Submission Guidelines</h2>
-      <p>Please read the following instructions and policies carefully before submitting your manuscript.</p>
-    </div>
-
-    <!-- Main Guidelines Cards -->
-    <div class="guidelines-card-grid">
-      <!-- 1. Originality -->
-      <div class="guideline-card">
-        <div class="guideline-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        </div>
-        <h3>Originality & Scope</h3>
-        <p>Manuscripts must present original, unpublished research contributing significantly to the conference tracks. Submissions must not be currently under consideration for publication elsewhere.</p>
-      </div>
-
-      <!-- 2. Formatting & Length -->
-      <div class="guideline-card">
-        <div class="guideline-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-        </div>
-        <h3>Format & Page Limits</h3>
-        <p>Papers must follow the standard IEEE double-column format (A4 size). The standard page limit is <strong>six (6) pages</strong> including all figures, tables, and references. Over-length page charges apply up to a maximum limit.</p>
-      </div>
-
-      <!-- 3. Plagiarism & Ethics -->
-      <div class="guideline-card">
-        <div class="guideline-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M20 12l-4-4m4 4l-4 4M4 12l4-4m-4 4l4 4"/><circle cx="12" cy="12" r="3"/></svg>
-        </div>
-        <h3>Plagiarism & Similarity</h3>
-        <p>Papers will be screened using CrossCheck / Turnitin. Submissions with high similarity scores will be desk-rejected. Authors must comply strictly with the <a href="https://www.ieee.org/publications/rights/plagiarism/id-plagiarism" target="_blank" rel="noopener noreferrer" class="text-link">IEEE Plagiarism Guidelines</a>.</p>
-      </div>
-
-      <!-- 4. Review Process -->
-      <div class="guideline-card">
-        <div class="guideline-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
-        <h3>Peer Review Policy</h3>
-        <p>All submissions undergo rigorous, double-blind peer review by at least two domain experts. Review criteria focus on technical quality, significance, novelty, clarity, and relevance to the conference scope.</p>
-      </div>
-    </div>
-
-    <!-- Detailed Checklist / Clauses -->
-    <div class="content-card" style="margin-bottom: 30px; background: #fff; border-radius: 14px; padding: 25px 30px; border: 1px solid #e1eaf0;">
-      <h3 style="font-size: 17px; color: #10233f; margin-bottom: 15px; font-family: 'Space Grotesk', sans-serif;">Key Author Requirements & Compliance</h3>
-      <ul style="padding-left: 20px; color: #526177; font-size: 13px; line-height: 1.8; margin: 0;">
-        <li><strong>Submission Mode:</strong> All manuscripts must be submitted electronically in PDF format via the designated conference portal. Direct submissions through email will not be accepted.</li>
-        <li><strong>Blind Submission:</strong> Do not include author names, affiliations, email addresses, or acknowledgment acknowledgments in the initial submission draft to facilitate blind review.</li>
-        <li><strong>Camera-Ready Verification:</strong> Final accepted papers must pass IEEE PDF eXpress compliance checks before camera-ready submission.</li>
-        <li><strong>Copyright Transfer:</strong> Authors of accepted papers must transfer publication rights to IEEE via the IEEE Electronic Copyright (eCF) system prior to publication.</li>
-        <li><strong>Presentation Policy (No-Show Rule):</strong> At least one author must register at the non-student/appropriate author rate and present the paper at the conference. Papers that are not presented will be excluded from submission to IEEE Xplore.</li>
-      </ul>
-    </div>
-
-    <!-- Workflow, Buttons, and Contact -->
-    <div class="guidelines-footer-box">
-      <div class="guidelines-notice">
-        <h4>Submission Workflow & Resources</h4>
-        <ol class="guideline-steps">
-          <li><strong>Download Template:</strong> Format your paper strictly using the official templates from <a href="https://www.ieee.org/conferences/publishing/templates" target="_blank" rel="noopener noreferrer" class="text-link">IEEE Conference Publishing</a>.</li>
-          <li><strong>Review Ethics & Guidelines:</strong> Verify compliance with the <a href="https://www.ieee.org/publications/rights/plagiarism/id-plagiarism" target="_blank" rel="noopener noreferrer" class="text-link">IEEE Plagiarism Guidelines</a>.</li>
-          <li><strong>Submit PDF:</strong> Submit your blinded PDF through the online conference submission portal before the deadline.</li>
-        </ol>
-
-        <div class="guidelines-contact-note">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span>For any issues related to submission, authors may contact the organizing committee at <a href="mailto:ieeespectramggv@gmail.com" class="text-link">ieeespectramggv@gmail.com</a></span>
-        </div>
-      </div>
-      
-      <div class="guidelines-actions-group">
-        <a href="https://www.ieee.org/conferences/publishing/templates" target="_blank" rel="noopener noreferrer" class="btn primary flex-btn">
-          IEEE Templates
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
-        </a>
-        <a href="https://www.ieee.org/publications/rights/plagiarism/id-plagiarism" target="_blank" rel="noopener noreferrer" class="btn secondary flex-btn">
-          Plagiarism Policy
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
-        </a>
-        
-      </div>
-      
-    </div>
-    <p style="margin-top: 15px; font-size: 20px; color: #526177; border-top: 1px dashed #dbe5ec; padding-top: 12px;">
-  <strong>Note:</strong> The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
-</p>
-  </div>
-</section>
-
-<!-- COMMITTEES -->
-<section class="section soft" id="committees">
-<!-- COMMITTEES -->
-<section class="section soft" id="committees">
-  <div class="container">
-    <div class="section-heading centered">
-      <div class="eyebrow">04 / CONFERENCE COMMITTEES</div>
-      <h2>People Shaping the Conference</h2>
-      <p>Technical, advisory, and organizing committees driving the vision.</p>
-    </div>
-
-    <div class="committee-layout">
-      <!-- Tabs Sidebar -->
-      <div class="committee-sidebar">
-        <button class="committee-tab active" data-target="panel-organizing">Organizing & TPC</button>
-        <button class="committee-tab" data-target="panel-international">International Advisory</button>
-        <button class="committee-tab" data-target="panel-national">National Advisory</button>
-        <button class="committee-tab" data-target="panel-local">Local Organizing</button>
-      </div>
-
-      <!-- Content Area -->
-      <div class="committee-content">
-        <!-- Organizing & TPC Panel -->
-        <div class="committee-panel active" id="panel-organizing">
-          <h3 class="table-title">Organizing & Technical Program Committee</h3>
-          <div class="table-responsive">
-            <table class="styled-table">
-              <thead>
-                <tr>
-                  <th width="30%">Role</th>
-                  <th>Name & Affiliation</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Chief Patrons</td>
-                  <td>
-                    <div style="margin-bottom: 6px;">Prof. Alok Kumar Chakrawal, HVC, GGV Bilaspur CG.</div>
-                    <div>Prof. G. S. Tomar, Chair, IEEE MP Section, Bhopal.</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Patrons</td>
-                  <td>
-                    <div style="margin-bottom: 6px;">Prof. Ashwini Kumar Dixit, Registrar, GGV Bilaspur CG.</div>
-                    <div>Prof. Manish Dixit, Chair (Elect), IEEE MP Section, Bhopal.</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Honorary Chairs</td>
-                  <td>
-                    <div style="margin-bottom: 6px;">Prof. M. Chakradhar Rao, Dean SoS (E&T), GGV Bilaspur CG.</div>
-                    <div style="margin-bottom: 6px;">Dr. Somesh Kumar Dahiya, Chair, IEEE MTT-S MP Section, India</div>
-                    <div style="margin-bottom: 6px;">Prof. Nipun Kumar Mishra, GGV Bilaspur CG.</div>
-                    <div>Dr. Sudakar Singh Chauhan, GGV Bilaspur CG.</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>General Chairs</td>
-                  <td>
-                    <div style="margin-bottom: 6px;">Dr. Shrawan Kumar Patel, GGV Bilaspur CG.</div>
-                    <div style="margin-bottom: 6px;">Dr. Anil Kumar Soni, GGV Bilaspur CG.</div>
-                    <div>Dr. Jitendra Agrawal, Vice-Chair (IEEE MP Section)</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Technical Program Committee Chairs</td>
-                  <td>
-                    <div style="margin-bottom: 6px;">Prof. Arokiaswami Alphones, NTU Singapore</div>
-                    <div style="margin-bottom: 6px;">Prof. Mrinal Kanti Mandal, IIT Kharagpur, WB.</div>
-                    <div style="margin-bottom: 6px;">Dr. Ravi Kumar Arya, Xiangshan 5G/6G Laboratory, ZICUST, China.</div>
-                    <div>Prof. M P S Chawla, Secretary (IEEE MP Section)</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Technical Program Committee Co-Chairs</td>
-                  <td>
-                    <div style="margin-bottom: 6px;">Dr. Ruchi Tripathi, GGV Bilaspur CG.</div>
-                    <div style="margin-bottom: 6px;">Dr. Rusan Kumar Barik, CHRIST University, Bengaluru, India</div>
-                    <div>Dr. Ranjit Kumar, VIT Chennai.</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Conference Treasurer (Finance Chairs)</td>
-                  <td>
-                    <div style="margin-bottom: 6px;">Dr. Sumit Kumar Gupta, GGV Bilaspur CG.</div>
-                    <div>Dr. Vijayalaxmi, Tresurer & WIE Chair (IEEE MP Section)</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Publication Chairs</td>
-                  <td>
-                    <div style="margin-bottom: 6px;">Prof. Soma Das, GGV Bilaspur CG.</div>
-                    <div>Prof. Dilip Singh Sisodia, Chair, CG Activities (IEEE MP Section)</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Publicity Chairs</td>
-                  <td>
-                    <div style="margin-bottom: 6px;">Dr. Dharmendra Kumar, GGV Bilaspur CG.</div>
-                    <div style="margin-bottom: 6px;">Dr. Sulakshna Chilukuri, VCE Hyderabad, AP.</div>
-                    <div style="margin-bottom: 6px;">Dr. K. Venkat Kishore, KL University, AP.</div>
-                    <div>Dr. Deepika Dubey, MIR Labs Gwalior (IEEE MP Section)</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Oversight Committee</td>
-                  <td>
-                    <div style="margin-bottom: 6px;">Dr. Kailash Patidar, BIST, Bhopal (IEEE MP Section)</div>
-                    <div>Dr. Shikha Agarwal, UIT-RGPV, Bhopal (IEEE MP Section)</div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- International Advisory Panel -->
-        <div class="committee-panel" id="panel-international">
-          <h3 class="table-title">International Advisory Committee</h3>
-          <div class="table-responsive">
-            <table class="styled-table">
-              <thead>
-                <tr>
-                  <th width="10%">S.No.</th>
-                  <th>Name & Affiliation</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>1</td><td>Prof. Slawomir Koziel, Reykjavik University, Iceland.</td></tr>
-                <tr><td>2</td><td>Prof. Madhawan Swaminathan, CHIMES, Penn State, USA.</td></tr>
-                <tr><td>3</td><td>Prof. Amin Abbosh, University of Queensland, Australia.</td></tr>
-                <tr><td>4</td><td>Prof. Q. S. Cheng, SUSTech, China.</td></tr>
-                <tr><td>5</td><td>Prof. M. Bozzi, University of Pavia, Italy.</td></tr>
-                <tr><td>6</td><td>Dr. Ajay Poddar, Synergy Microwave, USA.</td></tr>
-                <tr><td>7</td><td>Prof. Vladimir Okhmatovski, University of Manitoba, Winnipeg, Canada.</td></tr>
-                <tr><td>8</td><td>Dr. Amit Krishna Dwivedi, Warwick University, UK.</td></tr>
-                <tr><td>9</td><td>Dr. Surbhi (Bhatia) Khan, University of Salford, Manchester, UK.</td></tr>
-                <tr><td>10</td><td>Dr. Mahesh Soni, Renesas Electronics, UK.</td></tr>
-                <tr><td>11</td><td>Dr. C. Pradeep, Foxconn, Taiwan.</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- National Advisory Panel -->
-        <div class="committee-panel" id="panel-national">
-          <h3 class="table-title">National Advisory Committee</h3>
-          <div class="table-responsive">
-            <table class="styled-table">
-              <thead>
-                <tr>
-                  <th width="10%">S.No.</th>
-                  <th>Name & Affiliation</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>1</td><td>Prof. Mahesh P. Abegaonkar, CARE, IIT Delhi, Delhi, India</td></tr>
-                <tr><td>2</td><td>Prof. Chinmoy Saha, IIST Thiruvananthapuram, Kerala, India</td></tr>
-                <tr><td>3</td><td>Prof. Santanu Kumar Behara, NIT Rourkela, OR.</td></tr>
-                <tr><td>4</td><td>Dr. Soumava Mukherjee, IIT Kharagpur, WB.</td></tr>
-                <tr><td>5</td><td>Dr. Maifuz Ali, IIIT Raipur, CG.</td></tr>
-                <tr><td>6</td><td>Dr. Somak Bhattacharya, IIT BHU, Varanasi, UP.</td></tr>
-                <tr><td>7</td><td>Dr. Saptarshi Ghosh, IIT Indore, MP., India</td></tr>
-                <tr><td>8</td><td>Prof. Ashwani Kumar, DTU, New Delhi, India.</td></tr>
-                <tr><td>9</td><td>Dr. G. Arun Kumar, NIT Warangal, AP.</td></tr>
-                <tr><td>10</td><td>Dr. Arani Ali Khan, IIT Jodhpur, RJ.</td></tr>
-                <tr><td>11</td><td>Dr. Rakesh Sinha, NIT Rourkela, OR.</td></tr>
-                <tr><td>12</td><td>Dr. Arvind Kumar, VNIT Nagpur, MH.</td></tr>
-                <tr><td>13</td><td>Dr. Subhankar Mazumdar, NIT Meghalaya.</td></tr>
-                <tr><td>14</td><td>Dr. P. Arun Babu, CPRI, Bangaluru.</td></tr>
-                <tr><td>15</td><td>Dr. V. Arjun, Scientist, MMG-IGCAR, Kalpakkam.</td></tr>
-                <tr><td>16</td><td>Dr. Anand Mukhopadhyay, Mathworks, India.</td></tr>
-                <tr><td>17</td><td>Dr. M. Bubathi, Honeywell Technologies, Pune.</td></tr>
-                <tr><td>18</td><td>Dr. Navin Kumar, Amrita Vishwa Vidyapeetham, Bangaluru.</td></tr>
-                <tr><td>19</td><td>Dr. Pinku Ranjan, IIITM, Gwalior, MP.</td></tr>
-                <tr><td>20</td><td>Dr. Debasis Das, IIT Jodhpur, RJ.</td></tr>
-                <tr><td>21</td><td>Dr. Mohit Mishra, IIT Mandi, HP.</td></tr>
-                <tr><td>22</td><td>Dr. Aditya Kumar Singh, IIT Bhilai, CG.</td></tr>
-                <tr><td>23</td><td>Dr. Situ Rani Patre, NIT Rourkela, OR.</td></tr>
-                <tr><td>24</td><td>Dr. R. N. Patel, CSVTU, Bhilai, CG.</td></tr>
-                <tr><td>25</td><td>Dr. Akanksha Sneh, Mathworks, India.</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Local Organizing Panel -->
-        <div class="committee-panel" id="panel-local">
-          <h3 class="table-title">Local Organizing Committee</h3>
-          <div class="table-responsive">
-            <table class="styled-table">
-              <thead>
-                <tr>
-                  <th width="10%">S.No.</th>
-                  <th>Name & Affiliation</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>1</td><td>Mr. Manmath Badapanda, Chair, Professional Activity, (IEEE MP Section)</td></tr>
-                <tr><td>2</td><td>Prof. Anita Khanna, GGV Bilaspur, CG.</td></tr>
-                <tr><td>3</td><td>Dr. P. S. Srivastava, GGV Bilaspur, CG.</td></tr>
-                <tr><td>4</td><td>Dr. Manoj Gupta, GGV Bilaspur, CG.</td></tr>
-                <tr><td>5</td><td>Dr. Rajiv Dey, GGV Bilaspur CG.</td></tr>
-                <tr><td>6</td><td>Dr. Bhanu Pratap Singh, GGV Bilaspur CG.</td></tr>
-                <tr><td>7</td><td>Mrs. Beaulah Nath, GGV Bilaspur, CG.</td></tr>
-                <tr><td>8</td><td>Mrs. Pragati Patharia, GGV Bilaspur, CG.</td></tr>
-                <tr><td>9</td><td>Mr. Deepak Kumar Rathore, GGV Bilaspur, CG.</td></tr>
-                <tr><td>10</td><td>Mr. Jitendra Bhardwaj, GGV Bilaspur, CG.</td></tr>
-                <tr><td>11</td><td>Dr. Praveena Rajput, GGV Bilaspur CG.</td></tr>
-                <tr><td>12</td><td>Dr. Nikita Kashyap, GGV Bilaspur CG.</td></tr>
-                <tr><td>13</td><td>Mr. Chandan Tamrakar, GGV Bilaspur CG</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-<!-- REGISTRATION -->
-<section class="section" id="registration">
-  <div class="container">
-    <div class="section-heading centered">
-      <div class="eyebrow">05 / REGISTRATION</div>
-      <h2>Registration Fee Structure</h2>
-      <p>Details regarding registration fees and submission guidelines for SPECTRAM-2027.</p>
-    </div>
-
-    <div class="table-responsive" style="max-width: 800px; margin: 0 auto 30px;">
-      <table class="styled-table">
-        <thead>
-          <tr>
-            <th>Category</th>
-            <th>Registration Fee</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Non-IEEE Professional</td>
-            <td>₹9,000</td>
-          </tr>
-          <tr>
-            <td>IEEE Professional Member</td>
-            <td>₹8,000</td>
-          </tr>
-          <tr>
-            <td>Non-IEEE Student</td>
-            <td>₹8,000</td>
-          </tr>
-          <tr>
-            <td>IEEE Student Member</td>
-            <td>₹7,000</td>
-          </tr>
-          <tr>
-            <td>Foreign Author (IEEE Member)</td>
-            <td>$200</td>
-          </tr>
-          <tr>
-            <td>Foreign Author (Non-IEEE Member)</td>
-            <td>$250</td>
-          </tr>
-          <tr>
-            <td>Industry Participant</td>
-            <td>₹12,000</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Registration Rules & Guidelines -->
-    <div class="content-card" style="max-width: 800px; margin: 0 auto; background: #f9fcfc; border-radius: 12px; padding: 25px; border: 1px solid #e1eaf0;">
-      <h3 style="font-size: 16px; color: #10233f; margin-bottom: 15px; font-family: 'Space Grotesk', sans-serif;">Registration Guidelines</h3>
-      <ul style="padding-left: 20px; color: #526177; font-size: 13px; line-height: 1.7;">
-        <li style="margin-bottom: 8px;">One author registration covers one paper and one presenting author only. Authors submitting multiple papers must complete a separate registration for each paper, as per the applicable registration fee structure.</li>
-        <li style="margin-bottom: 8px;">If more than one co-author wishes to attend the conference, an additional attendee registration fee will be applicable for each additional participant.</li>
-        <li style="margin-bottom: 8px;">The standard paper length is six (6) pages. Each additional page beyond the six-page limit will incur an extra charge of <strong>USD 15 per page</strong> for international authors and <strong>INR 500 per page</strong> for Indian authors.</li>
-        <li style="margin-bottom: 8px;">All accepted, registered, and presented papers that comply with IEEE’s required quality, technical, and formatting standards will be submitted to IEEE for consideration for inclusion in the IEEE Xplore® Digital Library.</li>
-        <li style="margin-bottom: 8px;"> At least one author must register and present each accepted paper at the conference for the paper to be considered for inclusion in the conference proceedings and submission to IEEE Xplore, subject to applicable IEEE policies and requirements.</li>
-      </ul>
-    </div>
-    
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact-section" id="contact">
-  <div class="container">
-    <div class="contact-banner">
+    <div class="sponsors-heading">
       <div>
-        <div class="eyebrow">06 / CONTACT</div>
-        <h2>Event General Chairs</h2>
-        <p>For conference-related communication and event coordination.</p>
+        <p class="eyebrow"><span></span> POWERING SPECTRAM’27</p>
+        <h2 id="sponsors-title">Our <span>Sponsors &amp; Partners</span></h2>
+        <p>Recognising the institutions and IEEE community supporting the conference.</p>
       </div>
-      <a href=# target="_blank" class="btn light flex-btn">
-        Official Website 
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
-      </a>
+      <a class="text-link" href="contact.html">Partner with SPECTRAM ↗</a>
     </div>
-
-    <div class="contact-grid">
-      <!-- DR SHRAWAN -->
-      <div class="contact-card">
-        <div class="person-avatar">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </div>
-        <h3>Dr. Shrawan Kumar Patel</h3>
-        <p>
-          IEEE Senior Member, Associate Professor<br>
-          Department of Electronics and Communication Engineering<br>
-          Guru Ghasidas Vishwavidyalaya, Bilaspur, Chhattisgarh
-        </p>
+    <div class="sponsor-logo-carousel" id="sponsor-logo-carousel" aria-label="SPECTRAM sponsors and host institution logo carousel">
+      <button class="sponsor-carousel-arrow sponsor-prev" type="button" aria-label="Previous sponsor logo">‹</button>
+      <div class="sponsor-logo-stage" aria-live="polite">
+        <div class="sponsor-logo-item is-side" data-sponsor-index="1" aria-hidden="true"><img src="assets/logo-mtts.svg" alt=""></div>
+        <div class="sponsor-logo-item is-active" data-sponsor-index="0"><img src="assets/logo-ieee.svg" alt="IEEE Madhya Pradesh Section logo"><span class="sponsor-logo-caption">IEEE Madhya Pradesh Section</span></div>
+        <div class="sponsor-logo-item is-side" data-sponsor-index="2" aria-hidden="true"><img src="assets/logo-ggv.svg" alt=""></div>
       </div>
-
-      <!-- DR ANIL -->
-      <div class="contact-card">
-        <div class="person-avatar">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </div>
-        <h3>Dr. Anil Kumar Soni</h3>
-        <p>
-          IEEE Senior Member, Assistant Professor<br>
-          Department of Electronics and Communication Engineering<br>
-          Guru Ghasidas Vishwavidyalaya, Bilaspur, Chhattisgarh
-        </p>
-      </div>
+      <button class="sponsor-carousel-arrow sponsor-next" type="button" aria-label="Next sponsor logo">›</button>
+      <div class="sponsor-carousel-pagination" id="sponsor-carousel-pagination" aria-label="Choose sponsor logo"></div>
     </div>
+    <p class="sponsors-note">Industry and institutional sponsorship enquiries are welcome. Sponsor details and official logo assets can be added as they are confirmed.</p>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="container footer-grid">
     <div>
-      <a class="logo brand footer-brand" href="#home">
+      <a class="logo brand footer-brand" href="index.html">
         <img src="SPECTRAM 1.jpg.jpeg" alt="SPECTRAM 2027 Logo" class="brand-img">
       </a>
       <p>
@@ -694,10 +276,10 @@
 
     <div>
       <h4>Quick Links</h4>
-      <a href="#about">About</a>
-      <a href="#scope">Objectives</a>
-      <a href="#tracks">Technical Tracks</a>
-      <a href="#committees">Committees</a>
+      <a href="about.html">About</a>
+      <a href="about.html">Objectives</a>
+      <a href="tracks.html">Technical Tracks</a>
+      <a href="committees.html">Committees</a>
     </div>
 
     <div>
@@ -722,11 +304,9 @@
     </div>
   </div>
 </footer>
-
 <button id="topButton" class="back-top" aria-label="Back to top">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
-
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
