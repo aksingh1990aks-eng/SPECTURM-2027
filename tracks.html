@@ -33,7 +33,7 @@
 <header class="site-header">
   <div class="container nav-wrap">
     <a href="index.html" class="logo brand">
-      <img src="SPECTRAM 1.jpg.jpeg" alt="SPECTRAM 2027 Logo" class="brand-img">
+      <img src="assets/SPECTRAM_logo.png" alt="SPECTRAM 2027 Logo" class="brand-img">
     </a>
 
     <button class="menu-btn" aria-label="Toggle Menu">
@@ -80,8 +80,32 @@
       </h2>
       <p>Core research areas spanning the spectrum for SPECTRAM 2027.</p>
     </div>
-    <div class="tracks-grid" id="tracksGrid"></div>
+    <div class="tracks-grid" id="tracksGrid">
+      <!-- Static fallback cards ensure track information remains visible even if JavaScript fails to run. -->
+      <article class="thematic-card" style="--track-color:#3060A0">
+        <div class="thematic-header"><div class="thematic-id" style="background:#3060A0">01</div><div class="thematic-title-group"><h3 style="color:#3060A0">SIGNAL PROCESSING</h3><h4>Transforming Signals into Intelligence</h4></div></div>
+        <p class="thematic-desc" style="color:#3060A0">Enabling intelligence through advanced signal analysis, AI, imaging and connected systems.</p>
+        <ul class="thematic-list">
+          <li>Fundamentals of Signal Processing</li><li>AI/ML in Signal Processing</li><li>Digital Image Processing</li><li>Image, Video and Computer Vision</li><li>Audio and Speech Processing</li><li>Array, Multichannel and Sensor Signal Processing</li><li>Signal Processing for 5G/6G Communications</li><li>Radar, Sonar and Remote Sensing</li><li>Biomedical Signal and Image Processing</li><li>Sparse, Compressive and High-Dimensional Processing</li><li>Multimedia and Multimodal Signal Processing</li><li>IoT, Edge Intelligence and Cyber-Physical Systems</li><li>Signal Processing Algorithms, Architectures and VLSI</li><li>Security, Forensics and Information Processing</li><li>Computational Imaging and Inverse Problems</li><li>Emerging and Interdisciplinary Applications</li><li>Statistical, Adaptive and Intelligent Signal Processing</li>
+        </ul>
+      </article>
+      <article class="thematic-card" style="--track-color:#002050">
+        <div class="thematic-header"><div class="thematic-id" style="background:#002050">02</div><div class="thematic-title-group"><h3 style="color:#002050">COMMUNICATION</h3><h4>Communication for a Connected World</h4></div></div>
+        <p class="thematic-desc" style="color:#3060A0">Research spanning next-generation wireless systems, intelligent radio environments and networked connectivity.</p>
+        <ul class="thematic-list">
+          <li>Communication Theory and Information Theory</li><li>Wireless Communication Systems and Networks</li><li>6G and Next-Generation Wireless Technologies</li><li>MIMO, Massive MIMO and Advanced Beamforming</li><li>mmWave, Sub-THz and Terahertz Communications</li><li>Reconfigurable Intelligent Surfaces and Smart Radio Environments</li><li>AI/ML for Wireless Communications and Networking</li><li>IoT, Industrial IoT and Machine-Type Communications</li><li>Wireless Networks, Edge Computing and Network Intelligence</li><li>Satellite, Non-Terrestrial and Aerial Communications</li><li>Integrated Sensing, Localization and Communications</li><li>Optical, Free-Space and Fiber-Optic Communications</li><li>Vehicular, V2X and Autonomous Communications</li><li>Communication Security, Privacy and Reliability</li><li>Emerging Communication Technologies and Applications</li>
+        </ul>
+      </article>
+      <article class="thematic-card" style="--track-color:#129C8A">
+        <div class="thematic-header"><div class="thematic-id" style="background:#129C8A">03</div><div class="thematic-title-group"><h3 style="color:#129C8A">RF &amp; MICROWAVE</h3><h4>Advancing RF and Microwave Frontiers</h4></div></div>
+        <p class="thematic-desc" style="color:#3060A0">RF innovation, microwave engineering, antennas and intelligent electromagnetic technologies.</p>
+        <ul class="thematic-list">
+          <li>Passive RF Circuits and Components</li><li>Active RF/Microwave Circuits</li><li>RF Devices and Components</li><li>Millimeter-Wave Circuits</li><li>Microwave and mmWave Imaging</li><li>Wireless Power Transmission</li><li>Electromagnetic Interference and Compatibility</li><li>Optimization of Passive and Active RF Circuits</li><li>Microwave and mmWave Antennas</li><li>Antenna Theory</li><li>Antenna Array Design</li><li>Satellite Antennas and Array Antennas</li><li>Metamaterials and Metasurfaces</li><li>Antenna Measurements and Radar Cross Section (RCS)</li><li>Computational Electromagnetics</li><li>Reflector and Reflectarray Antennas</li><li>Wearable Circuits and Antennas</li><li>Radar Circuits and Antennas</li><li>Microwave, mmWave and THz Absorbers and Sensors</li><li>AI-Assisted RF Circuits and Antennas</li><li>Emerging RF and Microwave Circuits</li><li>AI/ML in RF and Microwave</li>
+        </ul>
+      </article>
+    </div>
     <div class="tracks-submission-cta">
+      <a class="btn primary" href="https://cmt3.research.microsoft.com/SPECTRAM2027" target="_blank" rel="noopener noreferrer">Submit Paper via Microsoft CMT ↗</a>
       <div><strong>Preparing a paper for SPECTRAM 2027?</strong><p>Review the formatting requirements and submission process before submitting your research.</p></div>
       <a href="guidelines.html" class="tracks-guidelines-link">Paper Submission Guidelines <span aria-hidden="true">↗</span></a>
     </div>
@@ -109,7 +133,7 @@
   <div class="container footer-grid">
     <div>
       <a class="logo brand footer-brand" href="index.html">
-        <img src="SPECTRAM 1.jpg.jpeg" alt="SPECTRAM 2027 Logo" class="brand-img">
+        <img src="assets/SPECTRAM_logo.png" alt="SPECTRAM 2027 Logo" class="brand-img">
       </a>
       <p>
         IEEE International Conference on Signal Processing, Electromagnetics, Communication Technologies, RF Antennas and Microwaves.
